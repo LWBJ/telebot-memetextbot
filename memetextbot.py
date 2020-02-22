@@ -54,8 +54,9 @@ def alt_caps(bot, update):
     
     for num, letter in enumerate(message, start=1):
         if num%2==1:
-          letter.upper()
-        new_message += letter
+            new_message += letter.upper()
+        else:
+            new_message += letter
       
     update.message.reply_text(text=new_message)
 
