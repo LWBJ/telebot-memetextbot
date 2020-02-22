@@ -55,6 +55,15 @@ def help(bot,update):
     """
     update.message.reply_text(text=message)
     
+def start(bot,update):
+    #help command
+    message = """
+This bot allows you to get formatted meme text easily. Simply send a command and your message to the bot. The bot will echo the message in your desired format. 
+
+Use /help to see the available commands to choose your formatting. 
+    """
+    update.message.reply_text(text=message)
+    
 def main():
   TOKEN = "950795385:AAGoS9dhssbR8j08FCsUfTRv2KR-yqljbkQ"
   NAME = "memetextbot"
@@ -67,6 +76,7 @@ def main():
   dp.add_handler(CommandHandler("b", spaced_caps))
   dp.add_handler(CommandHandler("c", spaced_lower))
   dp.add_handler(CommandHandler("help", help))
+  dp.add_handler(CommandHandler("start", start))
 
   #updater.start_polling()
   updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=TOKEN)
