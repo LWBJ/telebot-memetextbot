@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler
 from random import random
+import os
 
 def random_case(letter):
   #helper function to randomise letter casing
