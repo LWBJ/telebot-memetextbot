@@ -68,6 +68,8 @@ def help(bot,update):
 /b <message here> will echo the message in caps with spaces between each letter
 
 /c <message here> will echo the message in lower case with spaces between each letter
+
+/d <message here> will echo the message with alternating capitalization, starting with a capital letter
     """
     update.message.reply_text(text=message)
     
