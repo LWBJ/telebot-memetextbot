@@ -50,7 +50,9 @@ def help(bot,update):
     #help command
     message = """
 /a <message here> will echo the message with random capitalization
+
 /b <message here> will echo the message in caps with spaces between each letter
+
 /c <message here> will echo the message in lower case with spaces between each letter
     """
     update.message.reply_text(text=message)
