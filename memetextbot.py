@@ -59,7 +59,7 @@ def main():
   NAME = "memetextbot"
   PORT = os.environ.get('PORT')
   
-  updater = Updater(TOKEN)
+  updater = Updater(token=TOKEN)
   dp = updater.dispatcher
 
   dp.add_handler(CommandHandler("a", random_caps))
