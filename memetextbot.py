@@ -45,6 +45,19 @@ def spaced_lower(bot, update):
     new_message = " ".join(message)
 
     update.message.reply_text(text=new_message.lower())
+    
+def alt_caps(bot, update):
+    #echoes with alternating capitalization
+
+    message = update.message.text.partition(" ")[2].lower()
+    new_message=''
+    
+    for num, letter in enumerate(message, start=1):
+        if num%2==1:
+          letter.upper()
+        new_message += letter
+      
+    update.message.reply_text(text=new_message)
 
 def help(bot,update):
     #help command
@@ -77,6 +90,7 @@ def main():
   dp.add_handler(CommandHandler("a", random_caps))
   dp.add_handler(CommandHandler("b", spaced_caps))
   dp.add_handler(CommandHandler("c", spaced_lower))
+  dp.add_handler(CommandHandler("d", alt_caps))
   dp.add_handler(CommandHandler("help", help))
   dp.add_handler(CommandHandler("start", start))
 
