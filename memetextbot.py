@@ -12,7 +12,7 @@ def random_case(letter):
 def random_caps(bot, update):
     #echoes with randomised casing.
 
-    message = update.message.text.partition(" ")[2]
+    message = update.message.text.partition(" ")[2].lower()
     new_message1 = ''
     new_message2 = ''
     new_message3 = ''
