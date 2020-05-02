@@ -83,7 +83,7 @@ Use /help to see the available commands to choose your formatting.
     update.message.reply_text(text=message)
     
 def main():
-  TOKEN = "950795385:AAGoS9dhssbR8j08FCsUfTRv2KR-yqljbkQ"
+  TOKEN = os.environ.get('API_KEY','')
   NAME = "memetextbot"
   PORT = os.environ.get('PORT')
   
