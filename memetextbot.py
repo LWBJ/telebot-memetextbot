@@ -60,6 +60,27 @@ def alt_caps(bot, update):
       
     update.message.reply_text(text=new_message)
 
+def owoifier(bot, update):
+    #The owoifier
+
+    message = update.message.text.partition(" ")[2]
+    swaps =[
+      ('r','w'),('R','W'),
+      ('l','w'),('L','W'),
+      ('ove','uv'),('OVE','UV'),
+      ('na','nya'),('ne','nye'),('ni','nyi'),('no','nyo'),('nu','nyu'),
+      ('Na','Nya'),('Ne','Nye'),('Ni','Nyi'),('No','Nyo'),('Nu','Nyu'),
+      ('nA','nYA'),('nE','nYE'),('nI','nYI'),('nO','nYO'),('nU','nYU'),
+      ('NA','NYA'),('NE','NYE'),('NI','NYI'),('NO','NYO'),('NU','NYU'),
+    ]
+    
+    new_message = message
+    for pair in swaps:
+      new_message = new_message.replace(pair[0],pair[1])
+        
+    update.message.reply_text(text=new_message)
+      
+
 def help(bot,update):
     #help command
     message = """
