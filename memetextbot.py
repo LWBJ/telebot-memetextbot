@@ -91,6 +91,8 @@ def help(bot,update):
 /c <message here> will echo the message in lower case with spaces between each letter
 
 /d <message here> will echo the message with alternating capitalization, starting with a capital letter
+
+/owo <message here> will echo the message in owo text
     """
     update.message.reply_text(text=message)
     
@@ -115,6 +117,7 @@ def main():
   dp.add_handler(CommandHandler("b", spaced_caps))
   dp.add_handler(CommandHandler("c", spaced_lower))
   dp.add_handler(CommandHandler("d", alt_caps))
+  dp.add_handler(CommandHandler("owo", owoifier))
   dp.add_handler(CommandHandler("help", help))
   dp.add_handler(CommandHandler("start", start))
 
