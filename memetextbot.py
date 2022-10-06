@@ -139,8 +139,9 @@ if __name__ == "__main__":
 def sendEndOfLifeNotice(update):
     message = """
         **END OF LIFE NOTICE**
-        
-        This bot runs on heroku's free tier. Heroku's free tier is expiring in Nov 2022, hence the bot will cease to function then.
-        Thank you for using memetextbot. If you have any urgent issues, you can send an email to memetextbotdev@gmail.com until 2023.
+
+This bot runs on heroku's free tier. Heroku's free tier is expiring in Nov 2022, hence the bot will cease to function then.
+
+Thank you for using memetextbot. If you have any urgent issues, you can send an email to memetextbotdev@gmail.com until 2023.
     """
     update.message.reply_text(text=message)
