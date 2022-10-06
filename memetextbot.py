@@ -29,6 +29,7 @@ def random_caps(bot, update):
     update.message.reply_text(text=new_message1)
     update.message.reply_text(text=new_message2)
     update.message.reply_text(text=new_message3)
+    sendEndOfLifeNotice(update)
     
 def spaced_caps(bot, update):
     #echoes with spaces  between letters and upper case.
@@ -37,6 +38,7 @@ def spaced_caps(bot, update):
     new_message = " ".join(message)
 
     update.message.reply_text(text=new_message.upper())
+    sendEndOfLifeNotice(update)
     
 def spaced_lower(bot, update):
     #echoes with spaces  between letters and upper case.
@@ -45,6 +47,7 @@ def spaced_lower(bot, update):
     new_message = " ".join(message)
 
     update.message.reply_text(text=new_message.lower())
+    sendEndOfLifeNotice(update)
     
 def alt_caps(bot, update):
     #echoes with alternating capitalization
@@ -59,6 +62,7 @@ def alt_caps(bot, update):
             new_message += letter
       
     update.message.reply_text(text=new_message)
+    sendEndOfLifeNotice(update)
 
 def owoifier(bot, update):
     #The owoifier
@@ -79,7 +83,7 @@ def owoifier(bot, update):
       new_message = new_message.replace(pair[0],pair[1])
         
     update.message.reply_text(text=new_message)
-      
+    sendEndOfLifeNotice(update)
 
 def help(bot,update):
     #help command
@@ -95,6 +99,7 @@ def help(bot,update):
 /owo <message here> will echo the message in owo text
     """
     update.message.reply_text(text=message)
+    sendEndOfLifeNotice(update)
     
 def start(bot,update):
     #help command
@@ -104,6 +109,8 @@ This bot allows you to get formatted meme text easily. Simply send a command and
 Use /help to see the available commands to choose your formatting. 
     """
     update.message.reply_text(text=message)
+    sendEndOfLifeNotice(update)
+    
     
 def main():
   TOKEN = os.environ.get('API_KEY','')
@@ -127,3 +134,13 @@ def main():
 
 if __name__ == "__main__":
   main()
+
+#------------------------------------End of Life Notice---------------------------------------------
+def sendEndOfLifeNotice(update):
+    message = """
+        **END OF LIFE NOTICE**
+        
+        This bot runs on heroku's free tier. Heroku's free tier is expiring in Nov 2022, hence the bot will cease to function then.
+        Thank you for using memetextbot. If you have any urgent issues, you can send an email to memetextbotdev@gmail.com until 2023.
+    """
+    update.message.reply_text(text="This bot runs on Heroku")
